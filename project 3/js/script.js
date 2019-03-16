@@ -88,9 +88,15 @@ window.addEventListener('DOMContentLoaded', function() {
     let more = document.querySelector('.more'),
     overlay = document.querySelector('.overlay'),
     close = document.querySelector('.popup-close'),
-    descriptionBtn = document.getElementsByClassName('description-btn')[0];
+    descriptionBtn = document.getElementsByClassName('description-btn')[0],
+  descriptionBtn1 = document.getElementsByClassName('description-btn')[1],
+   descriptionBtn2 = document.getElementsByClassName('description-btn')[2],
+    descriptionBtn3 = document.getElementsByClassName('description-btn')[3];
     
 
+
+
+    
     more.addEventListener('click', function() {
         overlay.style.display = 'block';
         this.classList.add('more-splash');
@@ -104,20 +110,39 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     );
 
-    descriptionBtn.addEventListener('click', function() {
+
+descriptionBtn.addEventListener('click', function() {
+    overlay.style.display = 'block';
+        this.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
+        
+    });
+                
+        
+  
+    descriptionBtn1.addEventListener('click', function() {
                 overlay.style.display = 'block';
         this.classList.add('more-splash');
         document.body.style.overflow = 'hidden';
         
-    }
-    );
+    });
 
-    close.addEventListener('click', function(){
-        overlay.style.display = 'none';
-        more.classList.remove('more-splash');
-        document.body.style.overflow = '';
-    }
-    );
+    descriptionBtn2.addEventListener('click', function() {
+        overlay.style.display = 'block';
+this.classList.add('more-splash');
+document.body.style.overflow = 'hidden';
+
+});
+
+descriptionBtn3.addEventListener('click', function() {
+    overlay.style.display = 'block';
+this.classList.add('more-splash');
+document.body.style.overflow = 'hidden';
+
+}); 
+
+   
+    
     
            //form
 
