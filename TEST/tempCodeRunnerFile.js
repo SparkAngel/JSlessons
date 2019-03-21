@@ -9,29 +9,28 @@ function hasAllLetters(pattern, phrase) {
 
   let lowerpattern = pattern.toLowerCase(),
   lowerPhrase = phrase.toLowerCase(),
-  a1 = lowerPhrase.split(''),
-  a2 = lowerpattern;//.split('');
+  a1 = lowerPhrase.replace(/\s/g, ''),
+  a2 = lowerpattern.replace(/\s/g, '');
 
+
+  let result = true;     
+  
+  
+
+   for (var i = 0; i < a1.length; i++) {
+    if (a2.includes(a1[i]) == false )
+    {
+      result = false ;
+      break;
+    }
+ 
+   
     
-  
-  
 
-    for (var i = 0; i < a2.length; i++) {
-        
-        var found = false;
-        for (var j = 0; j < a1.length; j++) {
-            if (a1[j] === a2[i]) {
-                found = true;
-                break;
-            }
-        }
      
-        }
-    
-    return found;
-
-
-};
+}
+return result;
+}
 
 
 // Tests
