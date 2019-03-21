@@ -1,9 +1,12 @@
 function findLargestElement(arr) {
 
-   
- return Math.max.apply(null, arr);
-      
+  
+  let max = Math.max.apply(null, arr);
+  if  (arr.length === 0) {
+    return undefined;
   }
+  return max;
+}
   
   // Tests
   test(findLargestElement([0]), 0, 'arrayWithOneElement');

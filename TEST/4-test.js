@@ -12,6 +12,11 @@
  * Total population = 42M + 9.5M + 3.5M + 8.4M = 63.4M
  */
 function calculateCountriesPopulation(countries) {
+  let  total = 0;
+  
+
+  countries.forEach(countries => total = total + countries.population);
+return total;
   
   }
   

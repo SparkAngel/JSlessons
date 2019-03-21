@@ -1,41 +1,50 @@
-/*
- * Given an array of countries with their population.
- * Calculate total population of all countries.
- * 
- * [
- *   { name: 'Ukraine', population: 42 000 000},
- *   { name: 'Belarus', population: 9 500 000},
- *   { name: 'Moldova', population: 3 500 000},
- *   { name: 'Switzerland', population: 8 400 000}
- * ]
- * 
- * Total population = 42M + 9.5M + 3.5M + 8.4M = 63.4M
+/**
+ * Return true if all the letters in the `phrase`
+ * are present in the `pattern`.
+ *
+ * Comparison should be case insensitive. Meaning 
+ * phrase 'A' contains pattern 'a'.
  */
-function calculateCountriesPopulation(countries) {
-    let summ = 0;
+function hasAllLetters(pattern, phrase) {
 
-for (let i = 0; i<countries.length; i++) {
-  summ += countries[i].population + countries[i].population;
+  let lowerpattern = pattern.toLowerCase(),
+  lowerPhrase = phrase.toLowerCase(),
+  a1 = lowerPhrase.split(''),
+  a2 = lowerpattern;//.split('');
+
+    
+  
+  
+
+    for (var i = 0; i < a2.length; i++) {
+        
+        var found = false;
+        for (var j = 0; j < a1.length; j++) {
+            if (a1[j] === a2[i]) {
+                found = true;
+                break;
+            }
+        }
+     
+        }
+    
+    return found;
+
+
+};
+
+
+// Tests
+test(hasAllLetters('abcdef', 'Dead Beef'), true, 'Dead Beef');
+test(hasAllLetters('abcdef', 'Some phrase'), false, 'Some phrase');
+test(hasAllLetters('Happy New Year', 'nyh'), true, 'nyh');
+
+
+function test(actual, expected, testName = '') {
+  if (actual !== expected) {
+    const errorMessage = `Test ${testName} failed: ${actual} is not equal to expected ${expected}`;
+    console.error(errorMessage);  
+  } else {
+    console.log(`Test ${testName} passed!`);
+  }
 }
-  }
-  
-  // Tests
-  test(calculateCountriesPopulation([{ name: 'Ukraine', population: 42000000}]), 42000000, 'singleCountry');
-  test(calculateCountriesPopulation([]), 0, 'emptyArray');
-  test(calculateCountriesPopulation(
-    [{ name: 'Ukraine', population: 42000000},
-     { name: 'Belarus', population: 9500000},
-     { name: 'Moldova', population: 3500000},
-     { name: 'Switzerland', population: 8400000}]), 
-    63400000, 
-    'multipleCountries');
-  
-  
-  function test(actual, expected, testName = '') {
-    if (actual !== expected) {
-      const errorMessage = `Test ${testName} failed: ${actual} is not equal to expected ${expected}`;
-      console.error(errorMessage);  
-    } else {
-      console.log(`Test ${testName} passed!`);
-    }  
-  }
